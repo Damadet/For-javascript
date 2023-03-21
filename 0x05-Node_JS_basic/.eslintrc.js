@@ -1,31 +1,37 @@
 module.exports = {
-    'env': {
-        'commonjs': true,
-        'es2021': true,
-        'node': true
+    env: {
+        browser: false,
+        es6: true,
+        jest: true,
     },
-    'extends': 'eslint:recommended',
-    'overrides': [
+    extends: [
+        'airbnb-base',
+        'plugin:jest/all',
     ],
-    'parserOptions': {
-        'ecmaVersion': 'latest'
+    globals: {
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
     },
-    'rules': {
-        'indent': [
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: ['jest'],
+    rules: {
+        'max-classes-per-file': 'off',
+        'no-underscore-dangle': 'off',
+        'no-console': 'off',
+        'no-shadow': 'off',
+        'no-restricted-syntax': [
             'error',
-            4
+            'LabeledStatement',
+            'WithStatement',
         ],
-        'linebreak-style': [
-            'error',
-            'unix'
-        ],
-        'quotes': [
-            'error',
-            'single'
-        ],
-        'semi': [
-            'error',
-            'always'
-        ]
-    }
+    },
+    overrides:[
+        {
+            files: ['*.js'],
+            excludedFiles: 'babel.config.js',
+        }
+    ]
 };
