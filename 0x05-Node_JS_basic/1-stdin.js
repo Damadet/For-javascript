@@ -1,4 +1,6 @@
-process.stdin.setEncoding('utf8');
+process.stdin.setEncoding('utf8')
+
+// eslint-disable-next-line linebreak-style
 
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
