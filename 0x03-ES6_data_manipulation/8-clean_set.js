@@ -11,4 +11,5 @@ export default function cleanSet(set, startString) {
     }
   }
   return array.join('-');
+
 }
